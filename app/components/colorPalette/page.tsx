@@ -13,7 +13,6 @@ interface ColorPaleteProps {
 function ColorPalete({ genColor, setNewColor, index }: ColorPaleteProps) {
   const colorRef = useRef<HTMLInputElement>(null);
   const [myColor, setMyColor] = useState(genColor);
-  const [locked, setLocked] = useState(false);
 
   // Sync myColor with genColor when genColor changes
   useEffect(() => {
@@ -35,9 +34,7 @@ function ColorPalete({ genColor, setNewColor, index }: ColorPaleteProps) {
       colorRef.current.click();
     }
   };
-  const handleLock = () => {
-    setLocked(!locked);
-  }
+
 
   const handleCopy = () => {
     navigator.clipboard.writeText(myColor);
