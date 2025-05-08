@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useState, useEffect } from "react";
 import { toast } from "sonner";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
