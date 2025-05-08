@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: anton;
+    src: url(/public/Cascadia.ttf);
+}
+
+body{
+    font-family: anton;
+}
