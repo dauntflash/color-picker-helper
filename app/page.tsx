@@ -8,6 +8,9 @@ export default function Home() {
   const [myColor, setMyColor] = useState("#000000");
   const randomPalette = chroma.scale([chroma.random(), chroma.random()]).mode("lab").colors(5);
   const [palette, setPalette] = useState(randomPalette);
+  const [isLocked, setIsLocked] = useState(false);
+  
+  console.log(myColor)
 
   const generateColors = () => {
     const randomPalette = chroma.scale([chroma.random(), chroma.random()]).mode("lab").colors(5);
@@ -33,6 +36,13 @@ export default function Home() {
     setMyColor(newColor);
   };
 
+  const updateLockState = (index:number, newstate: boolean) => {
+    console.log(`updating at index ${index} with islopcked value as ${isLocked}`)
+    setIsLocked(!newstate)
+
+    return !isLocked
+  }
+
   return (
     <>
       <div className="bg-[#d0e3ff] text-[#081f5c] h-screen flex flex-col">
@@ -50,6 +60,7 @@ export default function Home() {
                   <div key={index} className="">
                     <ColorPalete
                       genColor={color}
+                      setIsLocked={(newstate:boolean) => updateLockState(index, newstate)}
                       setNewColor={(newColor: string) => updateColor(index, newColor)}
                       index={index}
                     />

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useRef, useState, useEffect } from "react";
 import { toast } from "sonner";
@@ -8,11 +8,13 @@ interface ColorPaleteProps {
   genColor: string;
   setNewColor: (color: string) => void;
   index: number;
+  setIsLocked: (isLocked: boolean) => void;
 }
 
-function ColorPalete({ genColor, setNewColor, index }: ColorPaleteProps) {
+function ColorPalete({ genColor, setNewColor, index,  setIsLocked }: ColorPaleteProps) {
   const colorRef = useRef<HTMLInputElement>(null);
   const [myColor, setMyColor] = useState(genColor);
+  const [lockState, setLockState] = useState(false)
 
   // Sync myColor with genColor when genColor changes
   useEffect(() => {
@@ -30,11 +32,17 @@ function ColorPalete({ genColor, setNewColor, index }: ColorPaleteProps) {
   const [textColor, setTextColor] = useState(getContrastColor(myColor));
 
   const handleClick = () => {
-    if (colorRef.current) {
+    if (!lockState){
+       if (colorRef.current) {
       colorRef.current.click();
     }
+    }
+   
   };
-
+  const handleLock = () => {
+    setLockState((prev)=>!prev)
+    setIsLocked(lockState);
+  };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(myColor);
@@ -52,8 +60,7 @@ function ColorPalete({ genColor, setNewColor, index }: ColorPaleteProps) {
             <div
               onClick={handleClick}
               style={{ background: myColor, color: getContrastColor(myColor) }}
-              className="flex flex-col items-center justify-center text-center rounded-[15px] cursor-pointer h-full shadow-md"
-            >
+              className="flex flex-col items-center justify-center text-center rounded-[15px] cursor-pointer h-full shadow-md">
               <span className="text-center mx-auto w-[8rem]">{myColor}</span>
             </div>
           </TooltipTrigger>
@@ -66,8 +73,7 @@ function ColorPalete({ genColor, setNewColor, index }: ColorPaleteProps) {
               fontSize: "14px",
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
               border: `1px solid ${textColor === "#FFFFFF" ? "#DDD" : "#444"}`,
-            }}
-          >
+            }}>
             <p>Click to change color</p>
           </TooltipContent>
         </Tooltip>
@@ -75,9 +81,20 @@ function ColorPalete({ genColor, setNewColor, index }: ColorPaleteProps) {
       <span
         style={{ color: getContrastColor(myColor) }}
         className="fa-regular fa-copy text-2xl hover:cursor-pointer p-4 w-max h-max absolute bottom-[30%] left-[20%]"
-        onClick={handleCopy}
-      ></span>
-
+        onClick={handleCopy}></span>
+      {lockState && (
+        <span
+          style={{ color: getContrastColor(myColor) }}
+          className="fa fa-lock text-2xl hover:cursor-pointer p-4 w-max h-max absolute bottom-[20%] left-[20%]"
+          onClick={handleLock}></span>
+      )}
+      
+      {!lockState && (
+        <span
+          style={{ color: getContrastColor(myColor) }}
+          className="fa fa-lock-open text-2xl hover:cursor-pointer p-4 w-max h-max absolute bottom-[20%] left-[20%]"
+          onClick={handleLock}></span>
+      )}
       <span>
         <input
           type="color"
