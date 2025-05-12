@@ -3,15 +3,15 @@
 import React from "react";
 import { useState } from "react";
 import chroma from "chroma-js";
-import ColorPalete from "./components/colorPalette/page";
+import ColorPalete from "./components/colorPalette/colorPalette";
 
 export default function Home() {
   const [myColor, setMyColor] = useState("#000000");
   const randomPalette = chroma.scale([chroma.random(), chroma.random()]).mode("lab").colors(5);
   const [palette, setPalette] = useState(randomPalette);
   const [isLocked, setIsLocked] = useState(false);
-  
-  console.log(myColor)
+
+  console.log(myColor);
 
   const generateColors = () => {
     const randomPalette = chroma.scale([chroma.random(), chroma.random()]).mode("lab").colors(5);
@@ -37,12 +37,12 @@ export default function Home() {
     setMyColor(newColor);
   };
 
-  const updateLockState = (index:number, newstate: boolean) => {
-    console.log(`updating at index ${index} with islopcked value as ${isLocked}`)
-    setIsLocked(!newstate)
+  const updateLockState = (index: number, newstate: boolean) => {
+    console.log(`updating at index ${index} with islopcked value as ${isLocked}`);
+    setIsLocked(!newstate);
 
-    return !isLocked
-  }
+    return !isLocked;
+  };
 
   return (
     <>
@@ -61,7 +61,7 @@ export default function Home() {
                   <div key={index} className="">
                     <ColorPalete
                       genColor={color}
-                      setIsLocked={(newstate:boolean) => updateLockState(index, newstate)}
+                      setIsLocked={(newstate: boolean) => updateLockState(index, newstate)}
                       setNewColor={(newColor: string) => updateColor(index, newColor)}
                       index={index}
                     />
