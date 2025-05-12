@@ -2,7 +2,7 @@
 
 A modern, interactive tool for creating and previewing color palettes for web design projects. Built with Next.js, TypeScript, and Tailwind CSS.
 
-![Color Palette Generator Screenshot](/screenshot.png)
+![Color Palette Generator Screenshot](public/screenshot.png)
 
 ## 🎨 Features
 
