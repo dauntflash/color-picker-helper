@@ -69,7 +69,7 @@ Check out the live demo: [Color Palette Generator](https://color-picker-helper.v
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## Author
 
 - [@dauntflash](https://github.com/dauntflash)
 
