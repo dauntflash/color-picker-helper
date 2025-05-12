@@ -1,8 +1,9 @@
 "use client";
 
-import ColorPalete from "./components/colorPalette/page";
+import React from "react";
 import { useState } from "react";
 import chroma from "chroma-js";
+import ColorPalete from "./components/colorPalette/page";
 
 export default function Home() {
   const [myColor, setMyColor] = useState("#000000");
