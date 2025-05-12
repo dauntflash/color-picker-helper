@@ -4,7 +4,7 @@ A modern, interactive tool for creating and previewing color palettes for web de
 
 ![Color Palette Generator Screenshot](public/screenshot.png)
 
-## 🎨 Features
+## Features
 
 - **Generate Harmonious Color Palettes** - Create beautiful color combinations with a single click
 - **Interactive Color Picker** - Manually adjust each color in the palette
@@ -14,11 +14,11 @@ A modern, interactive tool for creating and previewing color palettes for web de
 - **Responsive Design** - Works on desktop and mobile devices
 - **High-contrast Text** - Automatically adjusts text color for optimal readability
 
-## 🚀 Live Demo
+## Live Demo
 
 Check out the live demo: [Color Palette Generator](https://color-picker-helper.vercel.app/)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Framework**: [Next.js 15](https://nextjs.org/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
@@ -28,7 +28,7 @@ Check out the live demo: [Color Palette Generator](https://color-picker-helper.v
 - **UI Components**: [Shadcn UI](https://ui.shadcn.com/)
 - **Deployment**: [Vercel](https://vercel.com/)
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository:
    ```bash
@@ -48,20 +48,8 @@ Check out the live demo: [Color Palette Generator](https://color-picker-helper.v
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## 🧩 Project Structure
 
-```
-/
-├── app/
-│   └── page.tsx              # Main page with palette generator
-├── components/
-│   ├── ColorPalette.tsx      # Color palette component
-│   └── ui/                   # Shadcn UI components
-├── public/                   # Static assets
-└── ...configuration files
-```
-
-## 🔧 How It Works
+## How It Works
 
 1. **Palette Generation**: Uses Chroma.js to create harmonious color scales between two random colors.
 2. **Color Manipulation**: Each color in the palette can be individually selected and modified.
@@ -69,7 +57,7 @@ Check out the live demo: [Color Palette Generator](https://color-picker-helper.v
 4. **Contrast Calculation**: Automatically calculates text color based on background luminance for optimal readability.
 5. **UI Preview**: Shows how the palette would look in a real-world website with various UI elements.
 
-## 🎯 Usage
+## Usage
 
 - Click "Generate a Color Palette" to create a new color scheme
 - Click on any color to open the color picker and adjust it
@@ -77,7 +65,7 @@ Check out the live demo: [Color Palette Generator](https://color-picker-helper.v
 - Click the copy icon to copy the hex code to your clipboard
 - View the mock UI to see how your colors work together in a real design
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
@@ -85,12 +73,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [@dauntflash](https://github.com/dauntflash)
 
-## 🙏 Acknowledgements
-
-- [Next.js Team](https://nextjs.org/about) for the amazing framework
-- [Tailwind CSS](https://tailwindcss.com/brand) for the utility-first CSS framework
-- [Chroma.js](https://gka.github.io/chroma.js/) for color manipulation
-- [Shadcn UI](https://ui.shadcn.com/) for beautiful UI components
 
 ---
 
